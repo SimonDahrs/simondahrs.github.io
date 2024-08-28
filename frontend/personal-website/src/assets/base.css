@@ -54,13 +54,13 @@
 
 @font-face {
   font-family: 'CustomFont';
-  src: url('Slabo13px-Regular.ttf');
+  src: url('/Slabo13px-Regular.ttf');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'CustomFont';
-  src: url('FrancoisOne-Regular.ttf');
+  src: url('/FrancoisOne-Regular.ttf');
   font-weight: bold;
 }
 

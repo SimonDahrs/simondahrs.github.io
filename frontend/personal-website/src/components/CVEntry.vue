@@ -1,13 +1,14 @@
 <script setup>
 defineProps({
-    from: String,
-    to: String,
-    where: String,
-    title: String,
-    text: String
+    data: {
+        type: Object,
+        required: true
+    }
 })
 </script>
 
 <template>
-
+<div>
+    <h3>{{ data.title }}</h3>
+</div>
 </template>

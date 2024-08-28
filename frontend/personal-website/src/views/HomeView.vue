@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AboutText from '@/components/AboutText.vue'
+import CurriculumVitae from '@/components/CurriculumVitae.vue';
 import NavigationBar from '@/components/NavigationBar.vue'
 import PersonalInfo from '@/components/PersonalInfo.vue'
 import { onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue'
@@ -65,7 +66,8 @@ onBeforeUnmount(() => {
         <br><br>
         <br><br>
         <section id="cv" data-section="cv">
-          <AboutText id="cv" class="cv" :class="{ active: isActive }" />
+          <h1>Curriculum Vitae</h1>
+          <CurriculumVitae />
         </section>
       </div>
     </div>

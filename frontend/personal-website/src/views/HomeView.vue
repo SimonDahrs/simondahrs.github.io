@@ -15,32 +15,29 @@ onMounted(() => {
   setTimeout(() => {
     isActive.value = true
   }, 0)
-  window.addEventListener('scroll', function () {
+  const container = document.querySelector(".flex-container");
+  container?.addEventListener('scroll', (event) => {
+    console.log(container.scrollTop, container.scrollHeight)
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('#menu a');
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-
-      
-
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      if (container.scrollTop + 50 >= sectionTop && container.scrollTop + 50 < sectionTop + sectionHeight) {
         navLinks.forEach(link => {
-          console.log(window.scrollY, sectionTop, sectionTop + sectionHeight, true)
+
           if (link.getAttribute("data-section") === section.getAttribute("data-section")) {
-            console.log("activate", section.getAttribute("data-section"))
+            // console.log("activate", section.getAttribute("data-section"))
             link.classList.add('active');
           } else {
-            console.log("deactivate", section.getAttribute("data-section"))
+            // console.log("deactivate", section.getAttribute("data-section"))
             link.classList.remove('active');
           }
         });
       }
     });
   });
-
-
 })
 
 onBeforeUnmount(() => {
@@ -59,12 +56,9 @@ onBeforeUnmount(() => {
         <section id="intro" data-section="intro">
           <AboutText class="intro" :class="{ active: isActive }" />
         </section>
-        <br><br>
-        <br><br>
-        <br><br>
-        <br><br>
-        <br><br>
-        <br><br>
+        <br>
+        <div class="divider"></div>
+        <br>
         <section id="cv" data-section="cv">
           <h1>Curriculum Vitae</h1>
           <CurriculumVitae />
@@ -79,6 +73,10 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+h1 {
+  font-weight: bold
+}
+
 .nav-bar {
   margin-top: 2em;
 }
@@ -86,21 +84,25 @@ onBeforeUnmount(() => {
 .flex-container {
   display: flex;
   flex-direction: row;
-  margin-top: 3em;
-  justify-content: space-between;
-  height: 100vh;
+  margin-top: 50px;
+  box-sizing: border-box;
+  justify-content: center;
+  height: calc(100vh - 5em);
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 .left-col {
   max-width: 30rem;
   position: sticky;
-  top: 1em;
+  top: 0;
   left: 0;
 }
 
 .col {
-  padding: 2em;
+  padding: 0 2em;
   width: 50%;
+  max-width: 640px;
 }
 
 main {
@@ -138,5 +140,19 @@ main {
   width: 100%;
   height: 5em;
   text-align: center;
+}
+
+.divider {
+  width: 100%;
+  height: 10px;
+  background:
+    radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px) 0% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px) 100% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 3px, transparent 3px) 0% 100%/8px 8px no-repeat,
+    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 3px, transparent 3px) 100% 100%/8px 8px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 10px) calc(100% - 16px) no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 16px) calc(100% - 10px) no-repeat,
+    linear-gradient(145deg, transparent 50%, #dce5f7 100%);
+  border-radius: 8px;
 }
 </style>

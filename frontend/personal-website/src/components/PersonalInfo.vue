@@ -25,6 +25,7 @@
 .personal-links {
   display: flex;
   column-gap: 1.5rem;
+  width: 100%;
 }
 
 .icon {

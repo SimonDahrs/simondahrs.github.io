@@ -8,14 +8,14 @@ const entries = ref([
         to: "Present",
         where: "Apg",
         title: "DevOps Engineer @ APG Asset Management",
-        text: "APG Asset Management is a pension fund investment company. My role as DevOps Engineer is to support our business users by providing them with applications and data solutions they can use. One example is a Python application that uses a Redis task queue to fetch financial data from an external vendor. By doing so, the system can scale well for varying load. Apart from projects like these I am also involved in leading the internal Python community, for example by organizing demos and information sessions."
+        text: "<p>As a DevOps Engineer at APG Asset Management, a pension fund investment company, I:</p> <ul> <li>Develop and maintain applications and data solutions to support business users</li> <li>Design scalable systems, such as a Python application utilizing Redis task queues for efficient financial data retrieval</li> <li>Take lead in the internal Python community, organizing knowledge-sharing sessions and demos</li> <li>Collaborate with cross-functional teams to optimize operational workflows and implement best practices</li> </ul>"
     },
     {
         from: "Nov 2016",
         to: "Feb 2023",
         where: "Tetra B.V",
         title: "Software Engineer @ Tetra",
-        text: "As a software engineer at Tetra in Utrecht, I mostly designed and developed solutions to automate manual processes in pharmaces. Those solutions were often Python web applications or microservices that interact with databases. One specific example I am proud of is a Single Sign-On provider system used to authenticate and authorize users inside the company. Before that, most applications had separate login systems, but with this new system, everyone only has a single account. "
+        text: "<p>At Tetra, I focused on designing and developing solutions to automate manual processes in pharmacies, primarily using Python web applications and microservices. Key achievements include:</p> <ul> <li>Designed and implemented a Single Sign-On (SSO) system for affiliated pharmacists using Flask, Vue.js, and MySQL, enhancing security and standardizing user authentication across multiple applications</li> <li>Built a flexible report generation system allowing parametric reports to be generated in Docker containers, improving data analysis capabilities</li> <li>Developed automated systems for medicine inventory management in the wholesale division, optimizing stock control and distribution</li> <li>Created Python web applications and microservices that interact with databases to streamline pharmacy operations</li></ul> "
     }
 ])
 </script>

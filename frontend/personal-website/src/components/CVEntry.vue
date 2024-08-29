@@ -13,8 +13,7 @@ defineProps({
         <h3>{{ data.title }}</h3>
         <span style="text-align: end">{{ data.from }} - {{ data.to }}</span>
     </div>
-    <div class="content">
-        {{ data.text }}
+    <div class="content" v-html="data.text">
     </div>
 </div>
 </template>

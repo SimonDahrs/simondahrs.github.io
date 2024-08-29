@@ -12,23 +12,20 @@ onMounted(() => {
 
 <template>
   <div class="intro-container" :class="{ active: isActive }">
-    <div>
-      When I was thirteen years old, I started programming Android apps in Java. This inspired me to
-      pursue a master's degree in Computer Science at Delft University of Technology which I
-      obtained in 2022.
-    </div>
-    <br />
-    <div>
-      During my studies, I had my first programming job where I learned how to apply my skills in a
-      business setting. Mostly, I was concerned with designing and implementing Python web
-      applications. Also this is where I first I gained experience in the operations side of things,
-      such as CI/CD pipelines, Docker, etc.
-    </div>
-    <br />
-    <div>
-      Currently, I am employed as DevOps Engineer at APG Asset Management, which is a company that
-      invests for pension funds.
-    </div>
+    <p>
+      My journey in tech began at 13 when I started tinkering with Android app development in Java. This early interest
+      led me to pursue a master's degree in Computer Science at Delft University of Technology, which I completed in
+      2022.<br><br>
+      During my studies, I landed my first programming job, where I gained valuable experience applying my skills in a
+      business environment. My main focus was on designing and implementing Python web applications. This role also
+      introduced me to the operational side of software development, including CI/CD pipelines and containerization with
+      Docker.<br><br>
+      Currently, I work as a DevOps Engineer at APG Asset Management, a company that manages investments for pension
+      funds. This role allows me to combine my software development skills with my interest in operational
+      technologies.<br><br>
+      Outside of work, I'm expanding my skill set by learning Go. When I'm not coding, you can find me at the gym or on
+      the padel court, staying active and enjoying a good game.
+    </p>
   </div>
 </template>
 <style scoped>

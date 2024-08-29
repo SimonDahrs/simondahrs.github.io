@@ -16,6 +16,11 @@ const menuItems = ref([
         to: '/#cv',
         title: 'Curriculum vitae',
         data: "cv"
+    },
+    {
+        to: '/#skills',
+        title: 'Skills',
+        data: "skills"
     }
 ])
 
@@ -32,8 +37,8 @@ onMounted(() => {
 
 <template>
     <nav id="menu">
-        <a v-for="item in menuItems" :key="item.to" :href="item.to" :data-section="item.data" class="menu-item" :class="{
-            'active': route.fullPath === item.to
+        <a v-for="(item, index) in menuItems" :key="item.to" :href="item.to" :data-section="item.data" class="menu-item" :class="{
+            'active': route.fullPath === item.to || index == 0
         }">
             {{ item.title }}
         </a>
@@ -41,26 +46,34 @@ onMounted(() => {
 </template>
 <style scoped>
 #menu {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    align-items: center;
+    gap: 1rem;
 }
 .menu-item{
     width: 12rem;
+    text-align:center;
 }
 .menu-item:after {
+    margin: 0 auto;
     display: block;
-    content: '';
-    border-bottom: solid 3px var(--vt-c-dark-pastel-blue);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
+    content: '•';
+    float:left;
+    font-weight: bold;
+    /* width: 5px; */
+    /* border-radius: 10px; */
+    /* border-bottom: solid 3px var(--vt-c-dark-pastel-blue);   */
+    opacity: 0;
+    transition: opacity 350ms ease-out;
 }
 
-.menu-item:not(.active):hover:after { transform: scaleX(1); }
+.menu-item:not(.active):hover:after { opacity: 1; }
 
 .menu-item.active:after {
-    border-bottom: 3px solid var(--vt-c-dark-pastel-blue);
-    transform: scaleX(1);
+    /* border-bottom: 3px solid var(--vt-c-dark-pastel-blue); */
+    opacity: 1;
 }
 
 </style>

@@ -58,7 +58,7 @@ onBeforeUnmount(() => {
   <main>
     <div class="flex-container">
       <div id="hamburger-menu">
-        <div id="hamburger-toggle" @click="menuOpened = !menuOpened">
+        <div id="hamburger-toggle" @click="menuOpened = !menuOpened" :class="{ opened: menuOpened }" >
           <span class="button-icon" :class="{ opened: menuOpened }" id="openMenu">☰</span>
           <span class="button-icon" :class="{ opened: menuOpened }" id="closeMenu">✕</span>
         </div>
@@ -128,8 +128,8 @@ onBeforeUnmount(() => {
 #hamburger-menu {
   display: none;
   position: fixed;
-  top: 2rem;
-  left: 1rem;
+  top: .5rem;
+  left: .5rem;
   z-index: 5;
   display: none;
   row-gap: 1em;
@@ -159,6 +159,7 @@ onBeforeUnmount(() => {
 }
 
 #hamburger-toggle:hover {
+  background: rgba(199, 217, 254, 1);
   transform: scale(1.1);
   box-shadow:
     0.4px 0.4px 0.3px rgba(0, 0, 0, 0.02),
@@ -167,6 +168,10 @@ onBeforeUnmount(() => {
     3.4px 3.4px 2.7px rgba(0, 0, 0, 0.042),
     6.3px 6.3px 5px rgba(0, 0, 0, 0.05),
     15px 15px 12px rgba(0, 0, 0, 0.07);
+}
+
+#hamburger-toggle.opened {
+  background: rgba(199, 217, 254, 1);
 }
 
 #hamburger-menu-item-container {
@@ -268,6 +273,7 @@ main {
     flex-direction: column;
     margin-top: 1rem;
     padding-top: 0;
+    max-width: 100%;
   }
 
   .left-col {

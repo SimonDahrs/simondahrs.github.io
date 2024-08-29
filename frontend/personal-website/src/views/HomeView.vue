@@ -7,6 +7,7 @@ import SkillsOverview from '@/components/SkillsOverview.vue';
 import { onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const isActive = ref(false)
+const menuOpened = ref(false)
 
 onBeforeMount(() => {
   isActive.value = false
@@ -18,7 +19,7 @@ onMounted(() => {
   }, 0)
   window.addEventListener('scroll', (event) => {
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('#menu a');
+    const navLinks = document.querySelectorAll('.menu a');
 
     let scrolledSection = sections[0]
 
@@ -56,9 +57,18 @@ onBeforeUnmount(() => {
 <template>
   <main>
     <div class="flex-container">
+      <div id="hamburger-menu">
+        <div id="hamburger-toggle" @click="menuOpened = !menuOpened">
+          <span class="button-icon" :class="{ opened: menuOpened }" id="openMenu">☰</span>
+          <span class="button-icon" :class="{ opened: menuOpened }" id="closeMenu">✕</span>
+        </div>
+        <div id="hamburger-menu-item-container" :class="{ opened: menuOpened }">
+          <NavigationBar />
+        </div>
+      </div>
       <div class="left-col col">
         <PersonalInfo />
-        <NavigationBar class="nav-bar" />
+        <NavigationBar id="nav-bar" />
       </div>
       <div class="right-col col" :class="{ active: isActive }">
         <section id="intro" data-section="intro">
@@ -89,6 +99,91 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+#openMenu {
+  opacity: 1;
+  transition: transform .2s ease-in-out;
+  transform: scale(1) rotate(0);
+}
+
+#openMenu.opened {
+  transform: scale(0) rotate(90deg);
+}
+
+#closeMenu {
+  transition: transform .2s ease-in-out;
+  transform: scale(0) rotate(-90deg);
+}
+
+.button-icon {
+  position: absolute;
+  width: 50px;
+  text-align: center;
+}
+
+#closeMenu.opened {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+#hamburger-menu {
+  display: none;
+  position: fixed;
+  top: 2rem;
+  left: 1rem;
+  z-index: 5;
+  display: none;
+  row-gap: 1em;
+}
+
+#hamburger-toggle {
+  font-weight: bold;
+  font-size: 24px;
+  box-sizing: border-box;
+  background: rgba(199, 217, 254, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform .3s ease-out;
+  box-shadow:
+    0.1px 0.1px 0.3px rgba(0, 0, 0, 0.02),
+    0.1px 0.1px 0.8px rgba(0, 0, 0, 0.028),
+    0.3px 0.3px 1.5px rgba(0, 0, 0, 0.035),
+    0.4px 0.4px 2.7px rgba(0, 0, 0, 0.042),
+    0.8px 0.8px 5px rgba(0, 0, 0, 0.05),
+    2px 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+#hamburger-toggle:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0.4px 0.4px 0.3px rgba(0, 0, 0, 0.02),
+    1px 1px 0.8px rgba(0, 0, 0, 0.028),
+    1.9px 1.9px 1.5px rgba(0, 0, 0, 0.035),
+    3.4px 3.4px 2.7px rgba(0, 0, 0, 0.042),
+    6.3px 6.3px 5px rgba(0, 0, 0, 0.05),
+    15px 15px 12px rgba(0, 0, 0, 0.07);
+}
+
+#hamburger-menu-item-container {
+  transform: scaleY(0);
+  background-color: white;
+  z-index: 5;
+  box-shadow: 0 3px 10px rgb(0 1 1 / 0.3);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  border-radius: 7px;
+  transition: transform .15s;
+  transform-origin:  top;
+}
+
+#hamburger-menu-item-container.opened {
+  transform: scaleY(1);
+}
+
 h1 {
   font-weight: bold
 }
@@ -163,7 +258,9 @@ main {
   border-radius: 8px;
 }
 
-
+#nav-bar{
+  margin-top: 3rem;
+}
 @media only screen and (max-width: 768px) {
 
   /* For mobile phones: */
@@ -177,14 +274,19 @@ main {
     position: relative;
     width: 100%;
     margin: 0 auto;
+    float: right;
   }
 
   .right-col {
     width: 100%;
   }
 
-  .nav-bar {
+  #nav-bar {
     display: none !important;
+  }
+
+  #hamburger-menu {
+    display: grid;
   }
 
 }

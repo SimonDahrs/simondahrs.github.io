@@ -23,7 +23,7 @@ onMounted(() => {
       Currently, I work as a DevOps Engineer at APG Asset Management, a company that manages investments for pension
       funds. This role allows me to combine my software development skills with my interest in operational
       technologies.<br><br>
-      Outside of work, I'm expanding my skill set by learning Go. When I'm not coding, you can find me at the gym or on
+      Outside of work, I'm expanding my skill set by learning Go(lang). When I'm not coding, you can find me at the gym or on
       the padel court, staying active and enjoying a good game.
     </p>
   </div>

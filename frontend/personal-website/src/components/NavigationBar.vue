@@ -36,7 +36,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <nav id="menu">
+    <nav class="menu">
         <a v-for="(item, index) in menuItems" :key="item.to" :href="item.to" :data-section="item.data" class="menu-item" :class="{
             'active': route.fullPath === item.to || index == 0
         }">
@@ -45,8 +45,8 @@ onMounted(() => {
     </nav>
 </template>
 <style scoped>
-#menu {
-    margin-top: 3rem;
+.menu {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;

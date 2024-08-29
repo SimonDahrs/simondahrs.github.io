@@ -64,7 +64,7 @@ onMounted(() => {
     font-weight: bold;
     /* width: 5px; */
     /* border-radius: 10px; */
-    /* border-bottom: solid 3px var(--vt-c-dark-pastel-blue);   */
+    /* border-bottom: solid 3px var(--vt-c-pastel-blue-dark);   */
     opacity: 0;
     transition: opacity 350ms ease-out;
 }
@@ -72,7 +72,7 @@ onMounted(() => {
 .menu-item:not(.active):hover:after { opacity: 1; }
 
 .menu-item.active:after {
-    /* border-bottom: 3px solid var(--vt-c-dark-pastel-blue); */
+    /* border-bottom: 3px solid var(--vt-c-pastel-blue-dark); */
     opacity: 1;
 }
 

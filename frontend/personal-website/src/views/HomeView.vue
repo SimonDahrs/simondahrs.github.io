@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import AboutText from '@/components/AboutText.vue'
 import CurriculumVitae from '@/components/CurriculumVitae.vue';
+import HamburgerMenu from '@/components/HamburgerMenu.vue';
 import NavigationBar from '@/components/NavigationBar.vue'
 import PersonalInfo from '@/components/PersonalInfo.vue'
 import SkillsOverview from '@/components/SkillsOverview.vue';
 import { onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const isActive = ref(false)
-const menuOpened = ref(false)
 
 onBeforeMount(() => {
   isActive.value = false
@@ -16,14 +16,12 @@ onBeforeMount(() => {
 onMounted(() => {
   setTimeout(() => {
     isActive.value = true
-  }, 0)
+  }, 100)
   window.addEventListener('scroll', (event) => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.menu a');
 
     let scrolledSection = sections[0]
-
-    console.log(window.scrollY + window.innerHeight, document.body.scrollHeight)
 
     if (window.scrollY + window.innerHeight == document.body.scrollHeight) {
       // Bottom reached, activate lowest item
@@ -40,7 +38,7 @@ onMounted(() => {
     }
     navLinks.forEach(link => {
       if (link.getAttribute("data-section") === scrolledSection.getAttribute("data-section")) {
-        history.replaceState(null, "", "#" + link.getAttribute("data-section"))
+        // history.replaceState(null, "", "#" + link.getAttribute("data-section"))
         link.classList.add('active');
       } else {
         link.classList.remove('active');
@@ -57,16 +55,8 @@ onBeforeUnmount(() => {
 <template>
   <main>
     <div class="flex-container">
-      <div id="hamburger-menu">
-        <div id="hamburger-toggle" @click="menuOpened = !menuOpened" :class="{ opened: menuOpened }" >
-          <span class="button-icon" :class="{ opened: menuOpened }" id="openMenu">☰</span>
-          <span class="button-icon" :class="{ opened: menuOpened }" id="closeMenu">✕</span>
-        </div>
-        <div id="hamburger-menu-item-container" :class="{ opened: menuOpened }">
-          <NavigationBar />
-        </div>
-      </div>
-      <div class="left-col col">
+      <HamburgerMenu />
+      <div class="left-col col" :class="{ active: isActive }">
         <PersonalInfo />
         <NavigationBar id="nav-bar" />
       </div>
@@ -98,7 +88,7 @@ onBeforeUnmount(() => {
   </main>
 </template>
 
-<style scoped>
+<style>
 #openMenu {
   opacity: 1;
   transition: transform .2s ease-in-out;
@@ -123,70 +113,6 @@ onBeforeUnmount(() => {
 #closeMenu.opened {
   opacity: 1;
   transform: scale(1) rotate(0);
-}
-
-#hamburger-menu {
-  display: none;
-  position: fixed;
-  top: .5rem;
-  left: .5rem;
-  z-index: 5;
-  display: none;
-  row-gap: 1em;
-}
-
-#hamburger-toggle {
-  font-weight: bold;
-  font-size: 24px;
-  box-sizing: border-box;
-  background: rgba(199, 217, 254, 0.5);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  align-items: center;
-  cursor: pointer;
-  transition: transform .3s ease-out;
-  box-shadow:
-    0.1px 0.1px 0.3px rgba(0, 0, 0, 0.02),
-    0.1px 0.1px 0.8px rgba(0, 0, 0, 0.028),
-    0.3px 0.3px 1.5px rgba(0, 0, 0, 0.035),
-    0.4px 0.4px 2.7px rgba(0, 0, 0, 0.042),
-    0.8px 0.8px 5px rgba(0, 0, 0, 0.05),
-    2px 2px 12px rgba(0, 0, 0, 0.07);
-}
-
-#hamburger-toggle:hover {
-  background: rgba(199, 217, 254, 1);
-  transform: scale(1.1);
-  box-shadow:
-    0.4px 0.4px 0.3px rgba(0, 0, 0, 0.02),
-    1px 1px 0.8px rgba(0, 0, 0, 0.028),
-    1.9px 1.9px 1.5px rgba(0, 0, 0, 0.035),
-    3.4px 3.4px 2.7px rgba(0, 0, 0, 0.042),
-    6.3px 6.3px 5px rgba(0, 0, 0, 0.05),
-    15px 15px 12px rgba(0, 0, 0, 0.07);
-}
-
-#hamburger-toggle.opened {
-  background: rgba(199, 217, 254, 1);
-}
-
-#hamburger-menu-item-container {
-  transform: scaleY(0);
-  background-color: white;
-  z-index: 5;
-  box-shadow: 0 3px 10px rgb(0 1 1 / 0.3);
-  border: 1px solid rgba(200, 200, 200, 0.3);
-  border-radius: 7px;
-  transition: transform .15s;
-  transform-origin:  top;
-}
-
-#hamburger-menu-item-container.opened {
-  transform: scaleY(1);
 }
 
 h1 {
@@ -221,16 +147,32 @@ main {
   margin-bottom: 2rem;
   overflow: hidden;
   overflow-y: auto;
+  color: var(--vt-c-text-left);
+  transform: translateY(20%);
+  opacity: 0;
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+.left-col.active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.left-col a {
+  color: var(--vt-c-text-left)
 }
 
 .right-col {
+  color: var(--vt-c-text-right);
   max-width: 55rem;
   width: 50%;
   margin: 0 0 0 auto;
   min-height: 60rem;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-30%);
+  transform: translateY(-20%);
   transition:
     opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out;

@@ -3,7 +3,7 @@ import { ref } from 'vue';
 
 const skills = ref(
     {
-        "Languages": ["Python", "SQL", "Javascript", "HTML", "CSS"],
+        "Languages": ["Python", "SQL", "Java", "Javascript", "HTML", "CSS"],
         "Web tech": ["FastAPI", "Flask", "Web2Py", "Vue.js"],
         "Data tech": ["MySQL", "PostgreSQL", "SQL Server", "Redis", "MongoDB", "Celery", "Pandas", "RabbitMQ"],
         "DevOps": ["Docker", "CI/CD", "Kubernetes", "Ansible"],
@@ -36,15 +36,23 @@ const skills = ref(
 
 .skill {
     display: inline-block;
-    padding: 0.5rem;
-    margin-left: 2px;
-    margin-right: 2px;
-    /* border: 1px solid transparent; */
-    border-radius: 9999px;
-    background: linear-gradient(135deg, var(--vt-c-pastel-blue-dark) 5%, var(--vt-c-pastel-blue-light) 80%, var(--vt-c-pastel-blue) 100%);
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 3px;
+    padding: 8px 16px;
+    font-size: 14px;
+    background: linear-gradient(135deg, rgb(var(--vt-c-accent)) 25%, rgb(var(--vt-c-accent-light)) 80%);
+    border: 1px solid rgb(var(--vt-c-accent-light));
+    border-radius: 50px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    margin: 0 5px 7px 5px;
+    cursor: pointer;
+}
+
+.skill:hover {
+    background: linear-gradient(135deg, rgb(var(--vt-c-accent-light)) 25%, rgb(var(--vt-c-accent)) 80%);
+  color: #FFFFFF; /* Change text color to white for contrast */
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
 @media only screen and (max-width: 768px) {

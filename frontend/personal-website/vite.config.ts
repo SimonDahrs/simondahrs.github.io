@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     outDir: "../../docs"
   },
-  base: process.env.NODE_ENV === "production" ? "/SimonDahrs/" : "",
+  // base: process.env.NODE_ENV === "production" ? "/SimonDahrs/" : "",
   plugins: [
     vue(),
     vueJsx(),

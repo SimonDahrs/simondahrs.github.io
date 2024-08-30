@@ -37,4 +37,14 @@
 #personal-info {
   padding: 1.2em;
 }
+
+@media only screen and (max-width: 768px) {
+  /* .link:first-child {
+    width: 100%;
+    margin-bottom: 5px;
+  } */
+  #personal-info {
+    background-image: linear-gradient(178deg, var(--vt-c-background-left) 90%, var(--vt-c-background-right) 90%);
+  }
+}
 </style>

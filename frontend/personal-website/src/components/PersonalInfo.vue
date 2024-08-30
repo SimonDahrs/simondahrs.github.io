@@ -34,7 +34,7 @@
 
 #personal-info {
   padding: 1.2em;
-  background:
+  /* background:
     radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px) 0% 0%/8px 8px
       no-repeat,
     radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px) 100% 0%/8px 8px
@@ -45,7 +45,7 @@
       no-repeat,
     linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 10px) calc(100% - 16px) no-repeat,
     linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 16px) calc(100% - 10px) no-repeat,
-    linear-gradient(145deg, transparent 50%, #dce5f7 100%);
+    linear-gradient(145deg, transparent 50%, #dce5f7 100%); */
   border-radius: 8px;
 }
 </style>

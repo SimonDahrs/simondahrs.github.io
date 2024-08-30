@@ -9,9 +9,9 @@
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #2c3e50;
-  --vt-c-pastel-blue-dark: #779ecb;
-  --vt-c-pastel-blue: #a2bffe;
-  --vt-c-pastel-blue-light: #c7d9fe;
+  --vt-c-pastel-blue-dark: #6A7FDB;
+  --vt-c-pastel-blue: #6A7FDB;
+  --vt-c-pastel-blue-light: #6A7FDB;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -26,7 +26,7 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
+  --color-background: #F8F7F3;
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
 
@@ -38,6 +38,7 @@
 
   --section-gap: 160px;
 }
+
 /* 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -55,7 +56,7 @@
 
 @font-face {
   font-family: 'CustomFont';
-  src: url('/Slabo13px-Regular.ttf');
+  src: url('/Montserrat-VariableFont_wght.ttf');
   font-weight: normal;
 }
 
@@ -80,7 +81,12 @@ html {
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background-image: linear-gradient(95deg, #232d4d 45%, #F5F6F7 45%);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   transition:
     color 0.5s,
     background-color 0.5s;

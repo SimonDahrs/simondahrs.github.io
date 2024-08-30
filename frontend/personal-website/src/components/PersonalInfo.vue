@@ -1,7 +1,7 @@
 <template>
   <div id="personal-info">
     <h1 id="name">Simon Dahrs</h1>
-    <h4>DevOps/Software engineer and information technology enthousiast</h4>
+    <h4>DevOps/Software engineer passionate about all things tech.</h4>
     <br />
     <div class="personal-links">
       <span class="link"

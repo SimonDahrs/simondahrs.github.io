@@ -15,7 +15,7 @@
       ></span>
       <span class="link"
         ><a target="_blank" href="https://github.com/SimonDahrs"
-          ><img class="icon" src="@/assets/img/github-mark.svg" /></a
+          ><img class="icon" src="@/assets/img/github-mark-white.svg" /></a
       ></span>
     </div>
     <br />
@@ -26,26 +26,15 @@
   display: flex;
   column-gap: 1.5rem;
   width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .icon {
-  height: 1.6rem;
+  max-height: 1.6rem;
 }
 
 #personal-info {
   padding: 1.2em;
-  /* background:
-    radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px) 0% 0%/8px 8px
-      no-repeat,
-    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px) 100% 0%/8px 8px
-      no-repeat,
-    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 3px, transparent 3px) 0% 100%/8px 8px
-      no-repeat,
-    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 3px, transparent 3px) 100% 100%/8px 8px
-      no-repeat,
-    linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 10px) calc(100% - 16px) no-repeat,
-    linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 16px) calc(100% - 10px) no-repeat,
-    linear-gradient(145deg, transparent 50%, #dce5f7 100%); */
-  border-radius: 8px;
 }
 </style>

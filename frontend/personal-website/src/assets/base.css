@@ -9,9 +9,13 @@
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #2c3e50;
-  --vt-c-pastel-blue-dark: #6A7FDB;
-  --vt-c-pastel-blue: #6A7FDB;
-  --vt-c-pastel-blue-light: #6A7FDB;
+  --vt-c-background-left: #232d4d;
+  --vt-c-background-right: #e7e7e7;
+  --vt-c-text-left: #F2E8D3;
+  --vt-c-text-right: #302609;
+  --vt-c-accent: 106, 127, 219;
+  --vt-c-accent-light: 150, 165, 229;
+  --vt-c-accent-dark: 74, 88, 153;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -80,8 +84,8 @@ html {
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background-image: linear-gradient(95deg, #232d4d 45%, #F5F6F7 45%);
+  color: var(--vt-c-text-right);
+  background-image: linear-gradient(95deg, var(--vt-c-background-left) 45%, var(--vt-c-background-right) 45%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,4 +100,16 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: rgb(var(--vt-c-accent));
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: linear-gradient(178deg, var(--vt-c-background-left) 300px, var(--vt-c-background-right) 300px);
+    background-attachment: scroll;
+    background-position: top;
+  }
 }

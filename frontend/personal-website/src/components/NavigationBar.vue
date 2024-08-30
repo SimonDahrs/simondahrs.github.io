@@ -51,9 +51,10 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    text-transform: uppercase;
 }
 .menu-item{
-    width: 12rem;
+    width: 15rem;
     text-align:center;
 }
 .menu-item:after {

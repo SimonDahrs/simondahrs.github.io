@@ -14,7 +14,7 @@ onMounted(() => {
   <div class="intro-container" :class="{ active: isActive }">
     <p>
       My journey in tech began at 13 when I started tinkering with Android app development in Java. This early interest
-      led me to pursue a master's degree in Computer Science at Delft University of Technology, which I completed in
+      led me to pursue a master's degree in Computer Science with AI Techniques specialization at Delft University of Technology, which I completed in
       2022. <a href="https://repository.tudelft.nl/record/uuid:44218abd-4b7e-4ae8-8f24-a2432acdacdc" target="_blank">My master's thesis</a> explored Graph Neural Networks for pure cold start in recommender systems.<br><br>
       During my studies, I landed my first programming job, where I gained valuable experience applying my skills in a
       business environment. My main focus was on designing and implementing Python web applications. This role also

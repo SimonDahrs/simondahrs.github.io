@@ -16,6 +16,31 @@ const menuOpened = ref(false)
     </div>
 </template>
 <style>
+#openMenu {
+  opacity: 1;
+  transition: transform .2s ease-in-out;
+  transform: scale(1) rotate(0);
+}
+
+#openMenu.opened {
+  transform: scale(0) rotate(90deg);
+}
+
+#closeMenu {
+  transition: transform .2s ease-in-out;
+  transform: scale(0) rotate(-90deg);
+}
+
+.button-icon {
+  position: absolute;
+  width: 50px;
+  text-align: center;
+}
+
+#closeMenu.opened {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
 #hamburger-menu {
     display: none;
     position: fixed;

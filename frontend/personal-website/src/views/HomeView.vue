@@ -6,6 +6,7 @@ import NavigationBar from '@/components/NavigationBar.vue'
 import PersonalInfo from '@/components/PersonalInfo.vue'
 import SkillsOverview from '@/components/SkillsOverview.vue';
 import { onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue'
+import ProjectsOverview from "@/components/ProjectsOverview.vue";
 
 const isActive = ref(false)
 
@@ -66,14 +67,15 @@ onBeforeUnmount(() => {
           <AboutText class="intro" />
         </section>
         <br>
-        <div class="divider"></div>
-        <br>
         <section id="cv" data-section="cv">
           <h1>Curriculum Vitae</h1>
           <CurriculumVitae />
         </section>
         <br>
-        <div class="divider"></div>
+        <section id="projects" data-section="projects">
+          <h1>Projects</h1>
+          <ProjectsOverview />
+        </section>
         <br>
         <section id="skills" data-section="skills">
           <h1>Skills</h1>
@@ -81,40 +83,10 @@ onBeforeUnmount(() => {
         </section>
       </div>
     </div>
-    <!-- <div class="intro-box">
-      <IntroductionBanner class="intro" :class="{ active: isActive }" />
-    </div> -->
-    <!-- <BodyGrid :items="bodyItems" class="bodyGrid" /> -->
   </main>
 </template>
 
 <style>
-#openMenu {
-  opacity: 1;
-  transition: transform .2s ease-in-out;
-  transform: scale(1) rotate(0);
-}
-
-#openMenu.opened {
-  transform: scale(0) rotate(90deg);
-}
-
-#closeMenu {
-  transition: transform .2s ease-in-out;
-  transform: scale(0) rotate(-90deg);
-}
-
-.button-icon {
-  position: absolute;
-  width: 50px;
-  text-align: center;
-}
-
-#closeMenu.opened {
-  opacity: 1;
-  transform: scale(1) rotate(0);
-}
-
 h1 {
   font-weight: bold
 }

@@ -87,6 +87,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style>
+
 h1 {
   font-weight: bold
 }

@@ -24,12 +24,10 @@ onMounted(() => {
       business environment. My main focus was on designing and implementing Python web applications. This role also
       introduced me to the operational side of software development, including CI/CD pipelines and containerization with
       Docker.<br><br>
-      Currently, I work as a DevOps Engineer at APG Asset Management, a company that manages investments for pension
-      funds. This role allows me to combine my software development skills with my interest in operational
-      technologies.<br><br>
+      Currently, I work as a Software Engineer at Flow Traders, the largest ETF market maker in Europe.
+      This role allows me to apply my software engineering skills in a high-paced and technology-driven environment.<br><br>
       Outside of work, I'm expanding my skill set by learning Go(lang). When I'm not coding, you can find me at the gym
-      or on
-      the padel court, staying active and enjoying a good game.
+      or on the padel court, staying active and enjoying a good game.
     </p>
   </div>
 </template>

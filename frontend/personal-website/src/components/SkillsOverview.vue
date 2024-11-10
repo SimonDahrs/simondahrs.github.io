@@ -50,7 +50,7 @@ const skills = ref(
 }
 
 .skill:hover {
-    background: linear-gradient(135deg, rgb(182, 192, 237) 25%, rgb(var(--vt-c-accent-light)) 80%);
+  background: linear-gradient(135deg, rgb(182, 192, 237) 25%, rgb(var(--vt-c-accent-light)) 80%);
   color: #FFFFFF; /* Change text color to white for contrast */
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
   transform: translateY(-2px); /* Subtle lift effect */

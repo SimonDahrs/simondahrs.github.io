@@ -3,12 +3,21 @@ import { ref } from 'vue'
 import CVEntry from '@/components/CVEntry.vue';
 
 const entries = ref([
+
+    {
+      from: "Sep 2024",
+      to: "Present",
+      title: "Software Engineer @ Flow Traders",
+      text: "<p>At Flow Traders in the Trading Automation team, I implement software solutions and data pipelines using " +
+          "Go and Python that streamline business processes. Using technologies as Apache Airflow and Kubernetes for deployment and " +
+          "orchestration, we take responisibility in delivering high-quality solutions over the entire lifecycle."
+    },
     {
         from: "Feb 2023",
-        to: "Present",
+        to: "Sep 2024",
         where: "Apg",
         title: "DevOps Engineer @ APG Asset Management",
-        text: "<p>As a DevOps Engineer at APG Asset Management, a pension fund investment company, I:</p> <ul> <li>Develop and maintain applications and data solutions to support business users</li> <li>Design scalable systems, such as a Python application utilizing Redis task queues for efficient financial data retrieval</li> <li>Take lead in the internal Python community, organizing knowledge-sharing sessions and demos</li> <li>Collaborate with cross-functional teams to optimize operational workflows and implement best practices</li> </ul>"
+        text: "<p>As a DevOps Engineer at APG Asset Management, a pension fund investment company, I:</p> <ul> <li>Developed and maintained applications and data solutions to support business users</li> <li>Designed scalable systems, such as a Python application utilizing Redis task queues for efficient financial data retrieval</li> <li>Took lead in the internal Python community, organizing knowledge-sharing sessions and demos</li> <li>Collaborated with cross-functional teams to optimize operational workflows and implement best practices</li> </ul>"
     },
     {
         from: "Nov 2016",
@@ -21,7 +30,7 @@ const entries = ref([
 </script>
 <template>
     <div>
-        <div v-for="entry in entries">
+        <div :key="entry.to" v-for="entry in entries">
             <CVEntry :data="entry" />
             <br><br>
         </div>
